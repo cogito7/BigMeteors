@@ -166,9 +166,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 147004292113bf34cba36a179026f4ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  orbitDistance: 5
+  orbitSpeed: 1
+  minSpeed: 1
+  maxSpeed: 6
+  avoidanceStrength: 1
+  avoidanceRadius: 2
   speed: 0.5
-  maxHealth: 5
   destroyY: -15
+  maxHealth: 5
 --- !u!114 &3180698201117756000
 MonoBehaviour:
   m_ObjectHideFlags: 0

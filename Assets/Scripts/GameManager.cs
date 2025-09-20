@@ -151,7 +151,7 @@ public class GameManager : MonoBehaviour
         Transform player = playerObj.transform;
 
         // pick random radius and angle
-        float radius = Random.Range(minSpawnRadius, maxSpawnRadius);
+        float radius = Random.Range(minSpawnRadius, maxSpawnRadius) + 1;
         float angle = Random.Range(0f, Mathf.PI * 2f);
         Vector2 spawnPos = (Vector2)player.position +
                            new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;

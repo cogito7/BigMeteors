@@ -15,12 +15,12 @@ public class Meteor : MonoBehaviour
     public float avoidanceRadius = 2f;    // How close to get before repelling
 
     [Header("Original Meteor Settings")]
-    [SerializeField] private float speed = 2f; // meteor movement speed (fallback)
-    [SerializeField] private float destroyY = -15f; // y position where meteor gets destroyed
+    [SerializeField] protected float speed = 2f; // meteor movement speed (fallback)
+    [SerializeField] protected float destroyY = -15f; // y position where meteor gets destroyed
 
     // Reference to GameManager instead of gameobject.find
-    private GameManager gameManager;
-    private Rigidbody2D rb; // Add Rigidbody2D for physics movement
+    protected GameManager gameManager;
+    protected Rigidbody2D rb; // Add Rigidbody2D for physics movement
 
     void Start()
     {
@@ -125,7 +125,7 @@ public class Meteor : MonoBehaviour
     }
 
     // Single Responsibility: handles boundary checks
-    private void CheckBounds()
+    protected void CheckBounds()
     {
         if (transform.position.y < destroyY)
             DestroyMeteor();
@@ -150,21 +150,20 @@ public class Meteor : MonoBehaviour
     }
 
     // Single Responsibility: handle laser collision
-    private void HandleLaserHit(Collider2D laser)
+    protected virtual void HandleLaserHit(Collider2D laser)
     {
-        GameManager gameManager = Object.FindFirstObjectByType<GameManager>();
         if (gameManager != null)
         {
             gameManager.meteorCount++;
-            gameManager.TriggerScreenShake(); // Trigger shake first
         }
         Destroy(laser.gameObject);
         // Delay destruction slightly so shake can start
         StartCoroutine(DelayedDestruction());
     }
 
-    private IEnumerator DelayedDestruction()
+    protected IEnumerator DelayedDestruction()
     {
+        gameManager.TriggerScreenShake(); // Trigger shake first
         yield return new WaitForSeconds(0.1f); // Small delay
         DestroyMeteor();
     }
