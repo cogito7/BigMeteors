@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 785a99b22a9124b4e873115e8e2408af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - playerPrefab: {instanceID: 0}
+  - meteorPrefab: {instanceID: 0}
+  - bigMeteorPrefab: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
