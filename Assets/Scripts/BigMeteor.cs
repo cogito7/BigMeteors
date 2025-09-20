@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
 
-// SOLID changes
+
+// SOLID changes; incl extension of parent to child class for shared properties
 
 public class BigMeteor : Meteor
 {

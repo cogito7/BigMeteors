@@ -61,33 +61,20 @@ public class Player : MonoBehaviour
         Vector3 movement = new Vector3(movementInput.x, movementInput.y, 0);
         transform.Translate(movement * Time.deltaTime * speed);
 
-
-        
-        // Screen wrapping - horizontal boundaries
-        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
-        {
-            // Teleport to opposite side of screen
-            transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
-        }
-
-        // Screen wrapping - vertical boundaries  
-        if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
-        {
-            // Teleport to opposite side of screen
-            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
-        }
-
-        /*
         transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * Time.deltaTime * speed);
-        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
-        {
-            transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
-        }
-        if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
-        }
-        */
+            // Screen wrapping - horizontal boundaries
+            if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
+
+                {
+                    transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
+                }
+            // Screen wrapping - vertical boundaries 
+            if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
+                {
+                    transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
+                }
+
+
     }
 
     // Single Responsibility; handles shooting input and laser creation
