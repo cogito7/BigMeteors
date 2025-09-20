@@ -1,8 +1,5 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 //SOLID Player class; follows single responsibility and open/closed principles; added comments and headers
 public class Player : MonoBehaviour
@@ -19,7 +16,7 @@ public class Player : MonoBehaviour
     private float verticalScreenLimit = 10f; // up/down screen boundaries
 
     [Header("Shooting Settings")]
-    private bool canShoot = true; 
+    private bool canShoot = true;
 
     // Start is called before the first frame update
     void Start()
@@ -62,17 +59,17 @@ public class Player : MonoBehaviour
         transform.Translate(movement * Time.deltaTime * speed);
 
         transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * Time.deltaTime * speed);
-            // Screen wrapping - horizontal boundaries
-            if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
+        // Screen wrapping - horizontal boundaries
+        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
 
-                {
-                    transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
-                }
-            // Screen wrapping - vertical boundaries 
-            if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
-                {
-                    transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
-                }
+        {
+            transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
+        }
+        // Screen wrapping - vertical boundaries 
+        if (transform.position.y > verticalScreenLimit || transform.position.y <= -verticalScreenLimit)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
+        }
 
 
     }

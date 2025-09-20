@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 
 // SOLID changes; incl extension of parent to child class for shared properties
@@ -7,10 +6,10 @@ using System.Collections;
 public class BigMeteor : Meteor
 {
     // Meteor properties - in inspector
-    [SerializeField] private int maxHealth = 5;         // number of laser hits needed to destroy
+    [SerializeField] private int maxHealth = 5; // number of laser hits needed to destroy
 
     // Private state variables
-    private int currentHealth;          // current health of meteor
+    private int currentHealth; // current health of meteor
 
     private void Start()
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // SOLID principles added
@@ -11,7 +9,7 @@ public class Laser : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
